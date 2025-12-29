@@ -16,6 +16,8 @@ for cliente in clientes:
 
 try:
     cursor.execute('INSERT INTO clientes (nome, email) VALUES (?, ?);', ("Ana Paula", "ana.paula@uol.com"))
+    cursor.execute('INSERT INTO clientes (id, nome, email) VALUES (?, ?, ?);', (3, "Ana Paula", "ana.paula@uol.com"))
+    
     conexao.commit()
 except Exception as e:
     conexao.rollback()
